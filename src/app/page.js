@@ -36,7 +36,7 @@ export default function Home() {
           <div className={styles.heroGlow}></div>
           <div className={styles.heroContent}>
             <div className={`${styles.badge} animate-fade-in-up`}>
-              <span className={styles.badgePulse}></span> USL LEAGUE TWO • INAUGURAL SEASON 2027
+              <span className={styles.badgePulse}></span> TARGETING USL LEAGUE TWO • INAUGURAL SEASON 2027
             </div>
             
             <div className={`${styles.heroLayout} animate-fade-in-up animation-delay-100`}>
@@ -96,7 +96,7 @@ export default function Home() {
                   At the helm of Iron Forest FC is CEO Lou Fiscella, a seasoned corporate executive with over two decades of strategic sales leadership and community advocacy. Lou's vision is to build a sustainable pre-professional sports organization that unites Huntsville and provides a professional platform for local development.
                 </p>
                 <p>
-                  Under Lou's executive leadership, the club is establishing a premier business and sporting structure. By recruiting an elite coaching staff, forming strong local partnerships, and providing collegiate stars and prospects with a true pathway in USL League Two, Lou is committed to making Huntsville a hallmark market for American soccer.
+                  Under Lou's executive leadership, the club is establishing a premier business and sporting structure. By recruiting an elite coaching staff, forming strong local partnerships, and providing collegiate stars and prospects with a true pathway through targeted entry into USL League Two, Lou is committed to making Huntsville a hallmark market for American soccer.
                 </p>
               </div>
             </div>
@@ -135,7 +135,7 @@ export default function Home() {
                 <div className={`${styles.timelineContent} glass-panel`}>
                   <span className={styles.timelineDate}>SPRING 2027</span>
                   <h4>Open Tryouts & Player Signings</h4>
-                  <p>Our newly appointed coaching staff hosts open evaluations for local and college players. Announcement of the initial USL2 roster.</p>
+                  <p>Our newly appointed coaching staff hosts open evaluations for local and college players, aiming to finalize our inaugural USL League Two roster.</p>
                 </div>
               </div>
 
@@ -144,7 +144,7 @@ export default function Home() {
                 <div className={`${styles.timelineContent} glass-panel`}>
                   <span className={styles.timelineDate}>SUMMER 2027</span>
                   <h4>Inaugural Matchday Kickoff</h4>
-                  <p>The first official match in Huntsville, TX. History is made as USL League Two soccer debuts in the Forest.</p>
+                  <p>The first official match in Huntsville, TX. History is made as pre-professional soccer debuts in the Forest.</p>
                 </div>
               </div>
             </div>
@@ -196,21 +196,21 @@ export default function Home() {
           <div className={styles.sectionInner}>
             <div className={styles.sectionHeader}>
               <h2 className={`${styles.sectionTitle} accent-title`}>FREQUENTLY ASKED QUESTIONS</h2>
-              <p className={styles.sectionSubtitle}>Everything you need to know about Huntsville's new USL2 team.</p>
+              <p className={styles.sectionSubtitle}>Everything you need to know about Huntsville's targeted entry into USL League Two.</p>
             </div>
 
             <div className={styles.faqsGrid}>
               <div className={`${styles.faqCard} glass-panel`}>
-                <h4>What is USL League Two?</h4>
+                <h4>Why is Iron Forest FC targeting USL League Two?</h4>
                 <p>
-                  USL League Two (USL2) is the leader in pre-professional soccer in North America. The league features over 120 clubs across the US and Canada, serving as the primary pathway for elite college players to transition into professional leagues (like MLS, USL Championship, and international leagues) while maintaining collegiate eligibility.
+                  USL League Two (USL2) is the leader in pre-professional soccer in North America, serving as the primary pathway for elite college players to transition into professional leagues (like MLS, USL Championship, and international leagues) while maintaining collegiate eligibility. We are actively working toward bringing a USL2 franchise to the Huntsville community.
                 </p>
               </div>
 
               <div className={`${styles.faqCard} glass-panel`}>
                 <h4>When does the season take place?</h4>
                 <p>
-                  USL League Two matches are played during the summer months, typically running from mid-May through mid-July, with playoffs concluding in early August. This schedule allows collegiate athletes to play during their summer breaks.
+                  If approved for entry, our matches would be played during the summer months, typically running from mid-May through mid-July, with playoffs concluding in early August. This schedule allows collegiate athletes to play during their summer breaks.
                 </p>
               </div>
 

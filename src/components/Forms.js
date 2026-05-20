@@ -199,7 +199,7 @@ export default function Forms() {
             {activeTab === "players" && (
               <div className={styles.inputGroupContainer}>
                 <p className={styles.tabDescription}>
-                  Aspiring to play pre-professional soccer in USL2? Pre-register your interest for open tryouts and evaluations with our coaching staff.
+                  Aspiring to play pre-professional soccer and target a spot in USL2? Pre-register your interest for open tryouts and evaluations with our coaching staff.
                 </p>
                 <div className={styles.gridFields}>
                   <div className={styles.inputField}>

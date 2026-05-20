@@ -16,12 +16,12 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Iron Forest FC | Huntsville, TX USL League Two Soccer",
-  description: "Official teaser page for Iron Forest FC, Huntsville Texas' upcoming pre-professional soccer club. Kicking off in USL League Two Summer 2027.",
+  title: "Iron Forest FC | Huntsville, TX Soccer",
+  description: "Official teaser page for Iron Forest FC, Huntsville Texas' upcoming pre-professional soccer club. Targeting entry into USL League Two for Summer 2027.",
   keywords: ["Iron Forest FC", "Huntsville Soccer", "Huntsville TX Soccer", "USL2 Huntsville", "USL League Two", "East Texas Soccer", "Lou Fiscella CEO", "Iron Forest FC CEO"],
   openGraph: {
-    title: "Iron Forest FC | Huntsville, TX USL League Two Soccer",
-    description: "Official teaser page for Iron Forest FC. Soccer kicks off in Huntsville, TX, Summer 2027.",
+    title: "Iron Forest FC | Huntsville, TX Soccer",
+    description: "Official teaser page for Iron Forest FC. Targeting entry into USL League Two for Summer 2027.",
     url: "https://ironforestfc.com",
     siteName: "Iron Forest FC",
     locale: "en_US",
@@ -29,8 +29,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Iron Forest FC | Huntsville, TX USL League Two Soccer",
-    description: "Join the forest. Huntsville's new pre-professional soccer club kicking off Summer 2027.",
+    title: "Iron Forest FC | Huntsville, TX Soccer",
+    description: "Join the forest. Huntsville's new pre-professional soccer club targeting entry into USL League Two for Summer 2027.",
   },
 };
 
