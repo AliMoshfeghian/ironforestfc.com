@@ -84,38 +84,55 @@ export default function Forms() {
   return (
     <div className={`${styles.formWrapper} glass-panel`}>
       {/* Tabs Headers */}
-      <div className={styles.tabHeaders}>
+      <div className={styles.tabHeaders} role="tablist" aria-label="Sign-up categories">
         <button
           className={`${styles.tabBtn} ${activeTab === "fans" ? styles.activeTab : ""}`}
           onClick={() => handleTabChange("fans")}
           type="button"
+          role="tab"
+          id="tab-fans"
+          aria-controls="panel-fans"
+          aria-selected={activeTab === "fans"}
         >
-          <User size={16} />
+          <User size={16} aria-hidden="true" />
           <span>FANS</span>
         </button>
         <button
           className={`${styles.tabBtn} ${activeTab === "players" ? styles.activeTab : ""}`}
           onClick={() => handleTabChange("players")}
           type="button"
+          role="tab"
+          id="tab-players"
+          aria-controls="panel-players"
+          aria-selected={activeTab === "players"}
         >
-          <Award size={16} />
+          <Award size={16} aria-hidden="true" />
           <span>PLAYERS</span>
         </button>
         <button
           className={`${styles.tabBtn} ${activeTab === "sponsors" ? styles.activeTab : ""}`}
           onClick={() => handleTabChange("sponsors")}
           type="button"
+          role="tab"
+          id="tab-sponsors"
+          aria-controls="panel-sponsors"
+          aria-selected={activeTab === "sponsors"}
         >
-          <Building size={16} />
+          <Building size={16} aria-hidden="true" />
           <span>SPONSORS</span>
         </button>
       </div>
 
       {/* Forms Body */}
-      <div className={styles.formBody}>
+      <div
+        className={styles.formBody}
+        role="tabpanel"
+        id={activeTab === "fans" ? "panel-fans" : activeTab === "players" ? "panel-players" : "panel-sponsors"}
+        aria-labelledby={activeTab === "fans" ? "tab-fans" : activeTab === "players" ? "tab-players" : "tab-sponsors"}
+      >
         {success ? (
           <div className={styles.successState}>
-            <div className={styles.successIcon}>✓</div>
+            <div className={styles.successIcon} aria-hidden="true">✓</div>
             <h4 className={styles.successTitle}>WELCOME TO THE FOREST!</h4>
             <p className={styles.successText}>
               {activeTab === "fans" && "You've successfully subscribed! We will notify you of logo reveals, ticket launches, and merch pre-orders."}
@@ -132,7 +149,7 @@ export default function Forms() {
           </div>
         ) : (
           <form onSubmit={handleSubmit} className={styles.form}>
-            {error && <div className={styles.errorMessage}>{error}</div>}
+            {error && <div className={styles.errorMessage} role="alert">{error}</div>}
 
             {/* TAB FANS */}
             {activeTab === "fans" && (
@@ -141,7 +158,7 @@ export default function Forms() {
                   Join the official mailing list. Get early access to season tickets, official merch drops, and local fan club events in Huntsville.
                 </p>
                 <div className={styles.inputField}>
-                  <User className={styles.inputIcon} size={18} />
+                  <User className={styles.inputIcon} size={18} aria-hidden="true" />
                   <input
                     type="text"
                     name="name"
@@ -151,10 +168,11 @@ export default function Forms() {
                     required
                     className={styles.input}
                     disabled={loading}
+                    aria-label="Your Name"
                   />
                 </div>
                 <div className={styles.inputField}>
-                  <Mail className={styles.inputIcon} size={18} />
+                  <Mail className={styles.inputIcon} size={18} aria-hidden="true" />
                   <input
                     type="email"
                     name="email"
@@ -164,6 +182,7 @@ export default function Forms() {
                     required
                     className={styles.input}
                     disabled={loading}
+                    aria-label="Your Email Address"
                   />
                 </div>
                 <button
@@ -184,7 +203,7 @@ export default function Forms() {
                 </p>
                 <div className={styles.gridFields}>
                   <div className={styles.inputField}>
-                    <User className={styles.inputIcon} size={18} />
+                    <User className={styles.inputIcon} size={18} aria-hidden="true" />
                     <input
                       type="text"
                       name="name"
@@ -194,10 +213,11 @@ export default function Forms() {
                       required
                       className={styles.input}
                       disabled={loading}
+                      aria-label="Full Name"
                     />
                   </div>
                   <div className={styles.inputField}>
-                    <Mail className={styles.inputIcon} size={18} />
+                    <Mail className={styles.inputIcon} size={18} aria-hidden="true" />
                     <input
                       type="email"
                       name="email"
@@ -207,13 +227,14 @@ export default function Forms() {
                       required
                       className={styles.input}
                       disabled={loading}
+                      aria-label="Email Address"
                     />
                   </div>
                 </div>
 
                 <div className={styles.gridFields}>
                   <div className={styles.inputField}>
-                    <span className={styles.inputPrefix}>Age:</span>
+                    <span className={styles.inputPrefix} aria-hidden="true">Age:</span>
                     <input
                       type="number"
                       name="age"
@@ -225,16 +246,18 @@ export default function Forms() {
                       required
                       className={`${styles.input} ${styles.inputWithPrefix}`}
                       disabled={loading}
+                      aria-label="Age"
                     />
                   </div>
                   <div className={styles.selectField}>
-                    <Shield className={styles.inputIcon} size={18} />
+                    <Shield className={styles.inputIcon} size={18} aria-hidden="true" />
                     <select
                       name="position"
                       value={playersData.position}
                       onChange={handlePlayersChange}
                       className={styles.select}
                       disabled={loading}
+                      aria-label="Preferred Position"
                     >
                       <option value="Goalkeeper">Goalkeeper</option>
                       <option value="Defender">Defender</option>
@@ -245,7 +268,7 @@ export default function Forms() {
                 </div>
 
                 <div className={styles.inputField}>
-                  <Briefcase className={styles.inputIcon} size={18} />
+                  <Briefcase className={styles.inputIcon} size={18} aria-hidden="true" />
                   <input
                     type="text"
                     name="experience"
@@ -255,6 +278,7 @@ export default function Forms() {
                     required
                     className={styles.input}
                     disabled={loading}
+                    aria-label="Previous Club, College, or High School Team"
                   />
                 </div>
 
@@ -276,7 +300,7 @@ export default function Forms() {
                 </p>
                 <div className={styles.gridFields}>
                   <div className={styles.inputField}>
-                    <Building className={styles.inputIcon} size={18} />
+                    <Building className={styles.inputIcon} size={18} aria-hidden="true" />
                     <input
                       type="text"
                       name="company"
@@ -286,10 +310,11 @@ export default function Forms() {
                       required
                       className={styles.input}
                       disabled={loading}
+                      aria-label="Company Name"
                     />
                   </div>
                   <div className={styles.inputField}>
-                    <User className={styles.inputIcon} size={18} />
+                    <User className={styles.inputIcon} size={18} aria-hidden="true" />
                     <input
                       type="text"
                       name="contactName"
@@ -299,13 +324,14 @@ export default function Forms() {
                       required
                       className={styles.input}
                       disabled={loading}
+                      aria-label="Contact Person Name"
                     />
                   </div>
                 </div>
 
                 <div className={styles.gridFields}>
                   <div className={styles.inputField}>
-                    <Mail className={styles.inputIcon} size={18} />
+                    <Mail className={styles.inputIcon} size={18} aria-hidden="true" />
                     <input
                       type="email"
                       name="email"
@@ -315,10 +341,11 @@ export default function Forms() {
                       required
                       className={styles.input}
                       disabled={loading}
+                      aria-label="Email Address"
                     />
                   </div>
                   <div className={styles.inputField}>
-                    <Phone className={styles.inputIcon} size={18} />
+                    <Phone className={styles.inputIcon} size={18} aria-hidden="true" />
                     <input
                       type="tel"
                       name="phone"
@@ -327,18 +354,20 @@ export default function Forms() {
                       placeholder="Phone Number (Optional)"
                       className={styles.input}
                       disabled={loading}
+                      aria-label="Phone Number"
                     />
                   </div>
                 </div>
 
                 <div className={styles.selectField}>
-                  <Briefcase className={styles.inputIcon} size={18} />
+                  <Briefcase className={styles.inputIcon} size={18} aria-hidden="true" />
                   <select
                     name="interest"
                     value={sponsorsData.interest}
                     onChange={handleSponsorsChange}
                     className={styles.select}
                     disabled={loading}
+                    aria-label="Sponsorship Interest"
                   >
                     <option value="Kit Sponsorship">Main Jersey / Kit Sponsor</option>
                     <option value="Field & Stadium Ads">Field & Stadium Signage</option>
@@ -350,7 +379,7 @@ export default function Forms() {
                 </div>
 
                 <div className={`${styles.inputField} ${styles.textareaField}`}>
-                  <MessageSquare className={styles.textareaIcon} size={18} />
+                  <MessageSquare className={styles.textareaIcon} size={18} aria-hidden="true" />
                   <textarea
                     name="message"
                     value={sponsorsData.message}
@@ -360,6 +389,7 @@ export default function Forms() {
                     required
                     className={styles.textarea}
                     disabled={loading}
+                    aria-label="Sponsorship goals or questions message"
                   />
                 </div>
 
@@ -368,7 +398,7 @@ export default function Forms() {
                   className={styles.submitBtn}
                   disabled={loading}
                 >
-                  {loading ? "Submitting Inquiry..." : "INQUIRE ABOUT SPONSORSHIP"}
+                  {loading ? "Submitting..." : "INQUIRE ABOUT SPONSORSHIP"}
                 </button>
               </div>
             )}
