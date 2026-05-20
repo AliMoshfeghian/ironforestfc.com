@@ -91,12 +91,12 @@ export default function Home() {
               </div>
 
               <div className={`${styles.storyTextCard} glass-panel`}>
-                <h3 className={styles.cardTitle}><Trophy className={styles.goldText} size={20} /> Coach Lou's Vision</h3>
+                <h3 className={styles.cardTitle}><Trophy className={styles.goldText} size={20} /> CEO Lou Fiscella's Vision</h3>
                 <p>
-                  At the helm of Iron Forest FC is Coach Lou, a dedicated soccer leader, builder, and mentor. With decades of coaching experience and community advocacy, Lou's goal is to bridge the gap between youth academies, collegiate soccer, and professional pathways.
+                  At the administrative helm of Iron Forest FC is CEO Lou Fiscella, a seasoned corporate executive with over two decades of strategic sales leadership and community advocacy. Lou's vision is to build a sustainable pre-professional sports organization that unites Huntsville and provides a professional platform for local development.
                 </p>
                 <p>
-                  USL League Two serves as the premier pre-professional league in North America. Under Lou's leadership, Iron Forest FC will recruit top collegiate stars, local legends, and hungry prospects, providing Huntsville with high-octane soccer and giving players a true platform to launch their professional careers.
+                  Under Lou's executive leadership, the club is establishing a premier business and sporting structure. By recruiting an elite coaching staff, forming strong local partnerships, and providing collegiate stars and prospects with a true pathway in USL League Two, Lou is committed to making Huntsville a hallmark market for American soccer.
                 </p>
               </div>
             </div>
@@ -135,7 +135,7 @@ export default function Home() {
                 <div className={`${styles.timelineContent} glass-panel`}>
                   <span className={styles.timelineDate}>SPRING 2027</span>
                   <h4>Open Tryouts & Player Signings</h4>
-                  <p>Coach Lou hosts open evaluations for local and college players. Announcement of the initial USL2 roster.</p>
+                  <p>Our newly appointed coaching staff hosts open evaluations for local and college players. Announcement of the initial USL2 roster.</p>
                 </div>
               </div>
 
@@ -222,9 +222,9 @@ export default function Home() {
               </div>
 
               <div className={`${styles.faqCard} glass-panel`}>
-                <h4>How can local players get evaluated by Coach Lou?</h4>
+                <h4>How can local players get evaluated for the squad?</h4>
                 <p>
-                  Pre-registration for scouting is open! Simply click the "Players" tab in our sign-up section and enter your details. We will email you with registration forms, dates, and locations for our Spring 2027 open tryout camps.
+                  Pre-registration for scouting is open! Simply click the "Players" tab in our sign-up section and enter your details. We will email you with registration forms, dates, and locations for our Spring 2027 open tryout camps hosted by our coaching staff.
                 </p>
               </div>
             </div>
