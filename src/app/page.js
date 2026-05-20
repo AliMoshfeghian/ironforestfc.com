@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { Trees, Trophy, Target, ArrowRight, ShieldCheck, Mail, Users, ArrowDown } from "lucide-react";
 import Crest from "../components/Crest";
 import Countdown from "../components/Countdown";
@@ -11,10 +12,10 @@ export default function Home() {
       {/* Navigation Header */}
       <header className={styles.header}>
         <div className={styles.headerInner}>
-          <div className={styles.logoGroup}>
+          <Link href="/" className={styles.logoGroup}>
             <Crest width="36" height="42" />
             <span className={styles.brandName}>IRON FOREST <span className={styles.fcGold}>FC</span></span>
-          </div>
+          </Link>
           <nav className={styles.nav}>
             <a href="#story" className={styles.navLink}>Our Story</a>
             <a href="#timeline" className={styles.navLink}>Roadmap</a>
