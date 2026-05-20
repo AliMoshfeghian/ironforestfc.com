@@ -93,7 +93,7 @@ export default function Home() {
               <div className={`${styles.storyTextCard} glass-panel`}>
                 <h3 className={styles.cardTitle}><Trophy className={styles.goldText} size={20} /> CEO Lou Fiscella's Vision</h3>
                 <p>
-                  At the administrative helm of Iron Forest FC is CEO Lou Fiscella, a seasoned corporate executive with over two decades of strategic sales leadership and community advocacy. Lou's vision is to build a sustainable pre-professional sports organization that unites Huntsville and provides a professional platform for local development.
+                  At the helm of Iron Forest FC is CEO Lou Fiscella, a seasoned corporate executive with over two decades of strategic sales leadership and community advocacy. Lou's vision is to build a sustainable pre-professional sports organization that unites Huntsville and provides a professional platform for local development.
                 </p>
                 <p>
                   Under Lou's executive leadership, the club is establishing a premier business and sporting structure. By recruiting an elite coaching staff, forming strong local partnerships, and providing collegiate stars and prospects with a true pathway in USL League Two, Lou is committed to making Huntsville a hallmark market for American soccer.
