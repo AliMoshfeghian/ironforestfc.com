@@ -136,7 +136,7 @@ export default function Forms() {
             <h4 className={styles.successTitle}>WELCOME TO THE FOREST!</h4>
             <p className={styles.successText}>
               {activeTab === "fans" && "You've successfully subscribed! We will notify you of logo reveals, ticket launches, and merch pre-orders."}
-              {activeTab === "players" && "Your player inquiry has been submitted to Head Coach Leu. We will reach out when pre-season tryout dates are announced."}
+              {activeTab === "players" && "Your player inquiry has been submitted to Head Coach Lou. We will reach out when pre-season tryout dates are announced."}
               {activeTab === "sponsors" && "Thank you for supporting Huntsville soccer. A partnership manager will contact you shortly to discuss collaboration opportunities."}
             </p>
             <button
@@ -199,7 +199,7 @@ export default function Forms() {
             {activeTab === "players" && (
               <div className={styles.inputGroupContainer}>
                 <p className={styles.tabDescription}>
-                  Aspiring to play pre-professional soccer in USL2? Pre-register your interest for open tryouts and evaluations with Coach Leu.
+                  Aspiring to play pre-professional soccer in USL2? Pre-register your interest for open tryouts and evaluations with Coach Lou.
                 </p>
                 <div className={styles.gridFields}>
                   <div className={styles.inputField}>
