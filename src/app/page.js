@@ -31,6 +31,8 @@ export default function Home() {
         {/* Hero Section */}
         <section className={styles.hero}>
           <div className={styles.heroOverlay}></div>
+          <div className={styles.heroGrid}></div>
+          <div className={styles.heroGlow}></div>
           <div className={styles.heroContent}>
             <div className={`${styles.badge} animate-fade-in-up`}>
               <span className={styles.badgePulse}></span> USL LEAGUE TWO • INAUGURAL SEASON 2027

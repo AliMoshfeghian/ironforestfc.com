@@ -101,6 +101,37 @@
   pointer-events: none;
 }
 
+.heroGrid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.01) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.01) 1px, transparent 1px);
+  background-size: 50px 50px;
+  background-position: center;
+  z-index: 1;
+  pointer-events: none;
+  mask-image: radial-gradient(circle at 50% 50%, black 50%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle at 50% 50%, black 50%, transparent 100%);
+  opacity: 0.8;
+}
+
+.heroGlow {
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(195, 155, 52, 0.04) 0%, rgba(17, 60, 35, 0.08) 40%, transparent 70%);
+  z-index: 1;
+  pointer-events: none;
+  filter: blur(50px);
+}
+
 .heroContent {
   max-width: var(--content-max-width);
   width: 100%;
@@ -234,8 +265,10 @@
 
 /* Countdown Section */
 .countdownSection {
-  padding: 4rem 2rem;
-  background: linear-gradient(180deg, transparent, rgba(17, 60, 35, 0.05));
+  padding: 5rem 2rem;
+  background: linear-gradient(180deg, rgba(15, 18, 17, 0.4) 0%, rgba(7, 9, 8, 0.8) 100%);
+  border-top: 1px solid var(--glass-border);
+  border-bottom: 1px solid var(--glass-border);
   position: relative;
   z-index: 2;
 }
@@ -281,6 +314,14 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  border-left: 3px solid transparent;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.storyTextCard:hover {
+  border-left-color: var(--champion-gold);
+  background: rgba(255, 255, 255, 0.015);
+  transform: translateY(-4px);
 }
 
 .cardTitle {
@@ -333,16 +374,28 @@
 }
 
 .timelineMarker {
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   background: var(--bg-dark);
-  border: 3px solid var(--champion-gold);
+  border: 2px solid var(--champion-gold);
   position: absolute;
-  left: 24px;
-  top: 2rem;
+  left: 22px;
+  top: 2.1rem;
   z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   box-shadow: 0 0 10px var(--champion-gold-glow);
+}
+
+.timelineMarker::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: var(--champion-gold);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--champion-gold);
 }
 
 .timelineContent {
@@ -455,6 +508,14 @@
 
 .faqCard {
   padding: 2.5rem;
+  border-left: 3px solid transparent;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faqCard:hover {
+  border-left-color: var(--champion-gold);
+  background: rgba(255, 255, 255, 0.015);
+  transform: translateX(4px);
 }
 
 .faqCard h4 {
@@ -639,7 +700,7 @@
   }
 
   .timelineMarker {
-    left: 10px;
+    left: 8px;
   }
 
   .timelineContent {

@@ -5,7 +5,7 @@ export default function Crest({ className = "", width = "100%", height = "100%" 
     <svg
       width={width}
       height={height}
-      viewBox="0 0 200 240"
+      viewBox="0 0 200 250"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
@@ -31,21 +31,22 @@ export default function Crest({ className = "", width = "100%", height = "100%" 
 
         {/* Clip Path for Inner Content */}
         <clipPath id="shieldClip">
-          <path d="M20 20 H180 V120 C180 170 145 205 100 225 C55 205 20 170 20 120 Z" />
+          <path d="M20 15 H180 V110 C180 165 145 210 100 235 C55 210 20 165 20 110 Z" />
         </clipPath>
       </defs>
 
-      {/* Outer Glow Effect */}
+      {/* Outer Glow Effect (Stroke-based to prevent clipping and transformation distortions) */}
       <path
-        d="M20 20 H180 V120 C180 170 145 205 100 225 C55 205 20 170 20 120 Z"
-        fill="url(#greenGrad)"
-        opacity="0.1"
-        transform="scale(1.03) translate(-3, -3)"
+        d="M20 15 H180 V110 C180 165 145 210 100 235 C55 210 20 165 20 110 Z"
+        stroke="url(#greenGrad)"
+        strokeWidth="8"
+        fill="none"
+        opacity="0.3"
       />
 
       {/* Main Shield Background */}
       <path
-        d="M20 20 H180 V120 C180 170 145 205 100 225 C55 205 20 170 20 120 Z"
+        d="M20 15 H180 V110 C180 165 145 210 100 235 C55 210 20 165 20 110 Z"
         fill="url(#shieldBg)"
         stroke="url(#goldGrad)"
         strokeWidth="4"
@@ -54,7 +55,7 @@ export default function Crest({ className = "", width = "100%", height = "100%" 
 
       {/* Inner Accent Line */}
       <path
-        d="M26 26 H174 V118 C174 164 141 197 100 216 C59 197 26 164 26 118 Z"
+        d="M26 21 H174 V108 C174 159 141 202 100 226 C59 202 26 159 26 108 Z"
         stroke="rgba(195, 155, 52, 0.15)"
         strokeWidth="1"
       />
@@ -62,22 +63,22 @@ export default function Crest({ className = "", width = "100%", height = "100%" 
       {/* Shield Content Group (Clipped) */}
       <g clipPath="url(#shieldClip)">
         {/* Horizontal separation line */}
-        <line x1="20" y1="80" x2="180" y2="80" stroke="rgba(195, 155, 52, 0.25)" strokeWidth="1" />
+        <line x1="20" y1="75" x2="180" y2="75" stroke="rgba(195, 155, 52, 0.2)" strokeWidth="1" />
         
         {/* Stylized Pine Trees (East Texas Piney Woods) */}
         {/* Left Tree */}
-        <polygon points="65,145 75,125 70,125 78,110 73,110 80,95 87,110 82,110 90,125 85,125 95,145" fill="rgba(30, 92, 57, 0.4)" stroke="url(#goldGrad)" strokeWidth="1" />
+        <polygon points="65,150 75,130 70,130 78,115 73,115 80,100 87,115 82,115 90,130 85,130 95,150" fill="rgba(30, 92, 57, 0.4)" stroke="url(#goldGrad)" strokeWidth="1" />
         {/* Right Tree */}
-        <polygon points="105,145 115,125 110,125 118,110 113,110 120,95 127,110 122,110 130,125 125,125 135,145" fill="rgba(30, 92, 57, 0.4)" stroke="url(#goldGrad)" strokeWidth="1" />
+        <polygon points="105,150 115,130 110,130 118,115 113,115 120,100 127,115 122,115 130,130 125,130 135,150" fill="rgba(30, 92, 57, 0.4)" stroke="url(#goldGrad)" strokeWidth="1" />
         {/* Center Tree (Taller) */}
-        <polygon points="80,150 92,125 86,125 96,105 90,105 100,85 110,105 104,105 114,125 108,125 120,150" fill="url(#greenGrad)" stroke="url(#goldGrad)" strokeWidth="1.5" />
+        <polygon points="80,155 92,130 86,130 96,110 90,110 100,90 110,110 104,110 114,130 108,130 120,155" fill="url(#greenGrad)" stroke="url(#goldGrad)" strokeWidth="1.5" />
         
         {/* Vertical stripes in background (subtle) */}
-        <line x1="50" y1="80" x2="50" y2="200" stroke="rgba(162, 176, 168, 0.03)" strokeWidth="8" />
-        <line x1="150" y1="80" x2="150" y2="200" stroke="rgba(162, 176, 168, 0.03)" strokeWidth="8" />
+        <line x1="50" y1="75" x2="50" y2="210" stroke="rgba(162, 176, 168, 0.03)" strokeWidth="8" />
+        <line x1="150" y1="75" x2="150" y2="210" stroke="rgba(162, 176, 168, 0.03)" strokeWidth="8" />
 
         {/* Vintage Soccer Ball at the Base of the Trees */}
-        <g transform="translate(100, 168)">
+        <g transform="translate(100, 175)">
           <circle r="16" fill="#0d2117" stroke="url(#goldGrad)" strokeWidth="1.5" />
           {/* Soccer Ball Panels */}
           <path d="M 0,-16 L 0,-10 L -6,-5 L -14,-7 M 0,-10 L 6,-5 L 14,-7 M -6,-5 L -4,4 L -11,11 M 6,-5 L 4,4 L 11,11 M -4,4 L 0,10 L 0,16 M 4,4 L 0,10" stroke="url(#goldGrad)" strokeWidth="1" />
@@ -88,10 +89,9 @@ export default function Crest({ className = "", width = "100%", height = "100%" 
       {/* Typography */}
       
       {/* Club Name Banner Area */}
-      {/* Curved Text Path or Top Text */}
       <text
         x="100"
-        y="46"
+        y="42"
         textAnchor="middle"
         fill="url(#goldGrad)"
         fontSize="13"
@@ -105,7 +105,7 @@ export default function Crest({ className = "", width = "100%", height = "100%" 
       {/* Subtitle "FOOTBALL CLUB" */}
       <text
         x="100"
-        y="62"
+        y="56"
         textAnchor="middle"
         fill="#a2b0a8"
         fontSize="8"
@@ -116,13 +116,13 @@ export default function Crest({ className = "", width = "100%", height = "100%" 
         FOOTBALL CLUB
       </text>
 
-      {/* Est. Year Badge */}
-      <rect x="80" y="69" width="40" height="1" fill="url(#goldGrad)" opacity="0.5" />
+      {/* Est. Year Badge Divider */}
+      <rect x="80" y="64" width="40" height="1" fill="url(#goldGrad)" opacity="0.4" />
 
-      {/* Huntsville Location text */}
+      {/* Huntsville Location text - adjusted vertically for breathing room */}
       <text
         x="100"
-        y="204"
+        y="212"
         textAnchor="middle"
         fill="url(#goldGrad)"
         fontSize="11"
@@ -135,7 +135,7 @@ export default function Crest({ className = "", width = "100%", height = "100%" 
 
       <text
         x="100"
-        y="216"
+        y="224"
         textAnchor="middle"
         fill="#8b9891"
         fontSize="7"
