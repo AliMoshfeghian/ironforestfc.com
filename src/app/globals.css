@@ -1,0 +1,189 @@
+:root {
+  /* Color System */
+  --bg-dark: #070908;
+  --bg-gradient: radial-gradient(circle at 50% 0%, #0d2117 0%, #070908 70%);
+  --forest-green: #113c23;
+  --forest-light: #1e5c39;
+  --forest-glow: rgba(17, 60, 35, 0.3);
+  --iron-grey: #1a1e1c;
+  --iron-dark: #0f1211;
+  --champion-gold: #c39b34;
+  --champion-gold-glow: rgba(195, 155, 52, 0.2);
+  --champion-gold-rgb: 195, 155, 52;
+  --gold-hover: #d7b250;
+  
+  --text-primary: #f0f4f2;
+  --text-muted: #8b9891;
+  --text-light: #a2b0a8;
+  
+  /* Glassmorphism System */
+  --glass-bg: rgba(15, 18, 17, 0.7);
+  --glass-border: rgba(162, 176, 168, 0.08);
+  --glass-border-hover: rgba(195, 155, 52, 0.25);
+  
+  /* Spacing */
+  --content-max-width: 1200px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: var(--bg-dark);
+  background-image: var(--bg-gradient);
+  color: var(--text-primary);
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--forest-green);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--forest-light);
+}
+
+/* Typography Utilities */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-outfit), sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Micro-animations and Utilities */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.glass-panel:hover {
+  border-color: var(--glass-border-hover);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 20px rgba(195, 155, 52, 0.05);
+}
+
+/* Accent Underlines */
+.accent-title {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+.accent-title::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -0.75rem;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background: var(--champion-gold);
+  border-radius: 2px;
+  box-shadow: 0 0 8px var(--champion-gold-glow);
+}
+
+.accent-title-left {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+.accent-title-left::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -0.75rem;
+  width: 50px;
+  height: 3px;
+  background: var(--champion-gold);
+  border-radius: 2px;
+  box-shadow: 0 0 8px var(--champion-gold-glow);
+}
+
+/* Glow effects */
+.glow-text-gold {
+  text-shadow: 0 0 15px rgba(195, 155, 52, 0.3);
+}
+
+.glow-text-green {
+  text-shadow: 0 0 15px rgba(30, 92, 57, 0.4);
+}
+
+/* Page transitions / Fade in animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animation-delay-100 {
+  animation-delay: 100ms;
+}
+
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animation-delay-300 {
+  animation-delay: 300ms;
+}
+
+/* Active status indicator dot */
+.status-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: var(--champion-gold);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--champion-gold-glow);
+  animation: pulseDot 2s infinite alternate;
+}
+
+@keyframes pulseDot {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.5;
+    box-shadow: 0 0 4px var(--champion-gold-glow);
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 1;
+    box-shadow: 0 0 12px rgba(195, 155, 52, 0.6);
+  }
+}
