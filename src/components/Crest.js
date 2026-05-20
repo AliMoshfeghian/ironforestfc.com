@@ -65,20 +65,20 @@ export default function Crest({ className = "", width = "100%", height = "100%" 
         {/* Horizontal separation line */}
         <line x1="20" y1="75" x2="180" y2="75" stroke="rgba(195, 155, 52, 0.2)" strokeWidth="1" />
         
-        {/* Stylized Pine Trees (East Texas Piney Woods) */}
+        {/* Stylized Pine Trees (East Texas Piney Woods) - Moved up by 15px to free up bottom space */}
         {/* Left Tree */}
-        <polygon points="65,150 75,130 70,130 78,115 73,115 80,100 87,115 82,115 90,130 85,130 95,150" fill="rgba(30, 92, 57, 0.4)" stroke="url(#goldGrad)" strokeWidth="1" />
+        <polygon points="65,135 75,115 70,115 78,100 73,100 80,85 87,100 82,100 90,115 85,115 95,135" fill="rgba(30, 92, 57, 0.4)" stroke="url(#goldGrad)" strokeWidth="1" />
         {/* Right Tree */}
-        <polygon points="105,150 115,130 110,130 118,115 113,115 120,100 127,115 122,115 130,130 125,130 135,150" fill="rgba(30, 92, 57, 0.4)" stroke="url(#goldGrad)" strokeWidth="1" />
+        <polygon points="105,135 115,115 110,115 118,100 113,100 120,85 127,100 122,100 130,115 125,115 135,135" fill="rgba(30, 92, 57, 0.4)" stroke="url(#goldGrad)" strokeWidth="1" />
         {/* Center Tree (Taller) */}
-        <polygon points="80,155 92,130 86,130 96,110 90,110 100,90 110,110 104,110 114,130 108,130 120,155" fill="url(#greenGrad)" stroke="url(#goldGrad)" strokeWidth="1.5" />
+        <polygon points="80,140 92,115 86,115 96,95 90,95 100,75 110,95 104,95 114,115 108,115 120,140" fill="url(#greenGrad)" stroke="url(#goldGrad)" strokeWidth="1.5" />
         
         {/* Vertical stripes in background (subtle) */}
         <line x1="50" y1="75" x2="50" y2="210" stroke="rgba(162, 176, 168, 0.03)" strokeWidth="8" />
         <line x1="150" y1="75" x2="150" y2="210" stroke="rgba(162, 176, 168, 0.03)" strokeWidth="8" />
 
-        {/* Vintage Soccer Ball at the Base of the Trees */}
-        <g transform="translate(100, 175)">
+        {/* Vintage Soccer Ball at the Base of the Trees - Moved up to translate(100, 155) */}
+        <g transform="translate(100, 155)">
           <circle r="16" fill="#0d2117" stroke="url(#goldGrad)" strokeWidth="1.5" />
           {/* Soccer Ball Panels */}
           <path d="M 0,-16 L 0,-10 L -6,-5 L -14,-7 M 0,-10 L 6,-5 L 14,-7 M -6,-5 L -4,4 L -11,11 M 6,-5 L 4,4 L 11,11 M -4,4 L 0,10 L 0,16 M 4,4 L 0,10" stroke="url(#goldGrad)" strokeWidth="1" />
@@ -119,29 +119,29 @@ export default function Crest({ className = "", width = "100%", height = "100%" 
       {/* Est. Year Badge Divider */}
       <rect x="80" y="64" width="40" height="1" fill="url(#goldGrad)" opacity="0.4" />
 
-      {/* Huntsville Location text - adjusted vertically for breathing room */}
+      {/* Huntsville Location text - shifted up and sized appropriately to avoid curved border overlap */}
       <text
         x="100"
-        y="212"
+        y="196"
         textAnchor="middle"
         fill="url(#goldGrad)"
-        fontSize="11"
+        fontSize="9.5"
         fontFamily="var(--font-outfit)"
         fontWeight="700"
-        letterSpacing="0.18em"
+        letterSpacing="0.15em"
       >
         HUNTSVILLE
       </text>
 
       <text
         x="100"
-        y="224"
+        y="210"
         textAnchor="middle"
         fill="#8b9891"
         fontSize="7"
         fontFamily="var(--font-inter)"
         fontWeight="500"
-        letterSpacing="0.15em"
+        letterSpacing="0.12em"
       >
         EST. 2027
       </text>
