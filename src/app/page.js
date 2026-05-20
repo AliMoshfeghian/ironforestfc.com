@@ -8,11 +8,11 @@ import styles from "./page.module.css";
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <div id="top" className={styles.container}>
       {/* Navigation Header */}
       <header className={styles.header}>
         <div className={styles.headerInner}>
-          <Link href="/" className={styles.logoGroup}>
+          <Link href="/#top" className={styles.logoGroup}>
             <Crest width="36" height="42" />
             <span className={styles.brandName}>IRON FOREST <span className={styles.fcGold}>FC</span></span>
           </Link>
