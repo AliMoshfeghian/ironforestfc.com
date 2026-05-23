@@ -1,0 +1,372 @@
+.sectionContainer {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 6rem 2rem;
+  width: 100%;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(195, 155, 52, 0.08);
+  border: 1px solid rgba(195, 155, 52, 0.2);
+  color: var(--champion-gold);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  margin-bottom: 1rem;
+}
+
+.badgeIcon {
+  color: var(--champion-gold);
+}
+
+.sectionSubtitle {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+  max-width: 600px;
+}
+
+/* Tabs Container styling */
+.tabsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.tabButton {
+  background: rgba(15, 18, 17, 0.6);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 30px;
+  padding: 0.75rem 1.5rem;
+  color: var(--text-muted);
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: 0.05em;
+}
+
+.tabDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tabButton:hover {
+  border-color: var(--hover-color);
+  color: var(--text-primary);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+}
+
+.tabButton:hover .tabDot {
+  transform: scale(1.3);
+}
+
+.activeTab {
+  background: var(--glass-bg);
+  border-color: var(--champion-gold);
+  color: var(--text-primary);
+  box-shadow: 0 4px 20px rgba(195, 155, 52, 0.15);
+}
+
+.activeTab .tabDot {
+  transform: scale(1.3);
+  box-shadow: 0 0 8px currentColor;
+}
+
+/* Showcase Grid */
+.showcaseGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+/* Image Card Styling */
+.imageCard {
+  position: relative;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 16px;
+  min-height: 480px;
+}
+
+.glowBg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  transition: all 0.5s ease;
+}
+
+.imageWrapper {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.jerseyImage {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.5));
+}
+
+.kitTagline {
+  position: relative;
+  z-index: 2;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  letter-spacing: 0.05em;
+}
+
+/* Details Card Styling */
+.detailsCard {
+  padding: 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border-radius: 16px;
+}
+
+.detailsHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.kitType {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  color: var(--champion-gold);
+}
+
+.kitName {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.kitSubtitle {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.kitDescription {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-light);
+}
+
+/* Technical specifications styling */
+.specifications,
+.placements {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.specifications h4,
+.placements h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 0.5rem;
+}
+
+.sectionIcon {
+  color: var(--champion-gold);
+}
+
+.specsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 1.25rem;
+  border-radius: 12px;
+}
+
+.specRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.specRow:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.specLabel {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.specValue {
+  color: var(--text-primary);
+  font-weight: 500;
+  text-align: right;
+}
+
+/* Graphic placements list */
+.placementList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.placementList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--text-light);
+}
+
+.checkIcon {
+  color: var(--champion-gold);
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+}
+
+.placementList strong {
+  color: var(--text-primary);
+}
+
+/* Animations for active transitions */
+.fadeIn {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.25s ease-out, transform 0.25s ease-out;
+}
+
+.fadeOut {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.25s ease-in, transform 0.25s ease-in;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .showcaseGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .imageCard {
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sectionContainer {
+    padding: 4rem 1.5rem;
+  }
+
+  .tabsContainer {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tabButton {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+  }
+
+  .detailsCard {
+    padding: 2rem 1.5rem;
+  }
+
+  .kitName {
+    font-size: 1.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sectionContainer {
+    padding: 3rem 1rem;
+  }
+
+  .tabsContainer {
+    width: 100%;
+  }
+
+  .tabButton {
+    flex: 1 1 calc(50% - 0.5rem);
+    justify-content: center;
+  }
+
+  .tabButton:last-child {
+    flex: 1 1 100%;
+  }
+
+  .imageCard {
+    padding: 1.5rem 1rem;
+    min-height: 300px;
+  }
+
+  .specsGrid {
+    padding: 1rem;
+  }
+
+  .specRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .specValue {
+    text-align: left;
+  }
+}

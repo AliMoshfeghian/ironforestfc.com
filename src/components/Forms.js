@@ -296,7 +296,7 @@ export default function Forms() {
             {activeTab === "sponsors" && (
               <div className={styles.inputGroupContainer}>
                 <p className={styles.tabDescription}>
-                  Partner with Huntsville's newest sports franchise. Enhance your local business brand and reach fans across East Texas.
+                  Partner with Huntsville&apos;s newest sports franchise. Enhance your local business brand and reach fans across East Texas.
                 </p>
                 <div className={styles.gridFields}>
                   <div className={styles.inputField}>

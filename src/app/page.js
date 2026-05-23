@@ -4,6 +4,7 @@ import { Trees, Trophy, Target, ArrowRight, ShieldCheck, Mail, Users, ArrowDown 
 import Crest from "../components/Crest";
 import Countdown from "../components/Countdown";
 import Forms from "../components/Forms";
+import Kits from "../components/Kits";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
           </Link>
           <nav className={styles.nav}>
             <a href="#story" className={styles.navLink}>Our Story</a>
+            <a href="#kits" className={styles.navLink}>Official Kits</a>
             <a href="#timeline" className={styles.navLink}>Roadmap</a>
             <a href="#faqs" className={styles.navLink}>FAQs</a>
           </nav>
@@ -46,7 +48,7 @@ export default function Home() {
                   <span className={styles.goldText}>IS RISING</span>
                 </h1>
                 <p className={styles.heroSubtitle}>
-                  A new era of soccer is coming to Huntsville, Texas. We're building a pre-professional club to unite fans, develop elite local talent, and represent East Texas with pride.
+                  A new era of soccer is coming to Huntsville, Texas. We&apos;re building a pre-professional club to unite fans, develop elite local talent, and represent East Texas with pride.
                 </p>
                 <div className={styles.heroActions}>
                   <a href="#signup" className={styles.primaryCta}>
@@ -91,17 +93,20 @@ export default function Home() {
               </div>
 
               <div className={`${styles.storyTextCard} glass-panel`}>
-                <h3 className={styles.cardTitle}><Trophy className={styles.goldText} size={20} /> CEO Lou Fiscella's Vision</h3>
+                <h3 className={styles.cardTitle}><Trophy className={styles.goldText} size={20} /> CEO Lou Fiscella&apos;s Vision</h3>
                 <p>
-                  At the helm of Iron Forest FC is CEO Lou Fiscella, a seasoned corporate executive with over two decades of strategic sales leadership and community advocacy. Lou's vision is to build a sustainable pre-professional sports organization that unites Huntsville and provides a professional platform for local development.
+                  At the helm of Iron Forest FC is CEO Lou Fiscella, a seasoned corporate executive with over two decades of strategic sales leadership and community advocacy. Lou&apos;s vision is to build a sustainable pre-professional sports organization that unites Huntsville and provides a professional platform for local development.
                 </p>
                 <p>
-                  Under Lou's executive leadership, the club is establishing a premier business and sporting structure. By recruiting an elite coaching staff, forming strong local partnerships, and providing collegiate stars and prospects with a true pathway through targeted entry into USL League Two, Lou is committed to making Huntsville a hallmark market for American soccer.
+                  Under Lou&apos;s executive leadership, the club is establishing a premier business and sporting structure. By recruiting an elite coaching staff, forming strong local partnerships, and providing collegiate stars and prospects with a true pathway through targeted entry into USL League Two, Lou is committed to making Huntsville a hallmark market for American soccer.
                 </p>
               </div>
             </div>
           </div>
         </section>
+
+        {/* Official Kits Showcase */}
+        <Kits />
 
         {/* Roadmap / Timeline Section */}
         <section id="timeline" className={styles.timelineSection}>
@@ -126,7 +131,7 @@ export default function Home() {
                 <div className={`${styles.timelineContent} glass-panel`}>
                   <span className={styles.timelineDate}>WINTER 2026</span>
                   <h4>Jersey Launch & Venue Announcement</h4>
-                  <p>Releasing our inaugural home and away kits alongside details of our home stadium partner in Huntsville.</p>
+                  <p>Releasing details of our home stadium partner in Huntsville. <em>Update: Official home, away, and third kits have been launched! See the showcase above.</em></p>
                 </div>
               </div>
 
@@ -196,7 +201,7 @@ export default function Home() {
           <div className={styles.sectionInner}>
             <div className={styles.sectionHeader}>
               <h2 className={`${styles.sectionTitle} accent-title`}>FREQUENTLY ASKED QUESTIONS</h2>
-              <p className={styles.sectionSubtitle}>Everything you need to know about Huntsville's targeted entry into USL League Two.</p>
+              <p className={styles.sectionSubtitle}>Everything you need to know about Huntsville&apos;s targeted entry into USL League Two.</p>
             </div>
 
             <div className={styles.faqsGrid}>
@@ -224,7 +229,7 @@ export default function Home() {
               <div className={`${styles.faqCard} glass-panel`}>
                 <h4>How can local players get evaluated for the squad?</h4>
                 <p>
-                  Pre-registration for scouting is open! Simply click the "Players" tab in our sign-up section and enter your details. We will email you with registration forms, dates, and locations for our Spring 2027 open tryout camps hosted by our coaching staff.
+                  Pre-registration for scouting is open! Simply click the &quot;Players&quot; tab in our sign-up section and enter your details. We will email you with registration forms, dates, and locations for our Spring 2027 open tryout camps hosted by our coaching staff.
                 </p>
               </div>
             </div>

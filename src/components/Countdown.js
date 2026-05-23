@@ -13,7 +13,9 @@ export default function Countdown() {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    setIsMounted(true);
+    setTimeout(() => {
+      setIsMounted(true);
+    }, 0);
     // Kickoff date: June 1, 2027 at 19:00:00 (7 PM Central Time)
     const targetDate = new Date("2027-06-01T19:00:00-05:00").getTime();
 
