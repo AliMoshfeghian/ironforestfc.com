@@ -5,6 +5,7 @@ import Crest from "../components/Crest";
 import Countdown from "../components/Countdown";
 import Forms from "../components/Forms";
 import Kits from "../components/Kits";
+import CrestStory from "../components/CrestStory";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -102,6 +103,8 @@ export default function Home() {
                 </p>
               </div>
             </div>
+
+            <CrestStory />
           </div>
         </section>
 
