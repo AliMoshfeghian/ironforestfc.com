@@ -1,22 +1,17 @@
 import { NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
 
 export async function POST(request) {
   try {
     const body = await request.json();
     const { type, email, name, age, position, experience, company, contactName, phone, interest, message } = body;
 
-    // Basic Validation
     if (!type) {
       return NextResponse.json({ success: false, message: "Submission type is required" }, { status: 400 });
     }
-
     if (!email || !email.includes("@")) {
       return NextResponse.json({ success: false, message: "Valid email address is required" }, { status: 400 });
     }
 
-    // Prepare structured data
     const submission = {
       id: `${type}_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
       timestamp: new Date().toISOString(),
@@ -48,29 +43,28 @@ export async function POST(request) {
       return NextResponse.json({ success: false, message: "Invalid submission type" }, { status: 400 });
     }
 
-    // Log the submission to the server console
-    console.log(`[Form Submission] Type: ${type.toUpperCase()}`, submission);
+    const webhookUrl = process.env.SHEETS_WEBHOOK_URL;
+    const webhookSecret = process.env.SHEETS_WEBHOOK_SECRET;
 
-    // Save locally (for development/testing on local machine)
-    try {
-      const submissionsDir = process.cwd();
-      const filePath = path.join(submissionsDir, "submissions.json");
-
-      let currentSubmissions = [];
-      if (fs.existsSync(filePath)) {
-        const fileContent = fs.readFileSync(filePath, "utf-8");
-        currentSubmissions = JSON.parse(fileContent || "[]");
+    if (!webhookUrl || !webhookSecret) {
+      // Always log the full payload so a missing env var doesn't silently drop leads.
+      console.error("[Form Submission] SHEETS_WEBHOOK_URL or SHEETS_WEBHOOK_SECRET missing. Submission:", submission);
+    } else {
+      try {
+        const res = await fetch(webhookUrl, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ ...submission, secret: webhookSecret }),
+          redirect: "follow",
+        });
+        const result = await res.json().catch(() => ({ success: false, message: "Non-JSON response" }));
+        if (!result.success) {
+          console.error("[Form Submission] Webhook rejected submission:", result, submission);
+        }
+      } catch (webhookError) {
+        // Don't fail the user-facing request — log so the lead is recoverable from Vercel logs.
+        console.error("[Form Submission] Webhook call failed:", webhookError.message, submission);
       }
-
-      currentSubmissions.push(submission);
-      fs.writeFileSync(filePath, JSON.stringify(currentSubmissions, null, 2), "utf-8");
-      console.log(`[Form Submission] Saved locally to ${filePath}`);
-    } catch (fsError) {
-      // Gracefully handle file system restrictions in serverless environments (like Vercel)
-      console.warn(
-        "[Form Submission] File system write skipped or failed (expected on serverless environments like Vercel). Submissions will be logged.",
-        fsError.message
-      );
     }
 
     return NextResponse.json({

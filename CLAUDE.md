@@ -28,7 +28,7 @@ Single-page marketing/teaser site for **Iron Forest FC** (Huntsville, TX soccer 
   - `Crest.js` — server component that renders `/public/crest.png` (the club crest). The crest file is intentionally untracked-in-history-but-present; updating it is a normal task.
   - `Countdown.js` — `"use client"`. Counts down to **June 1, 2027 19:00 Central** (inaugural match target). Uses `useEffect` + `setInterval`; gate render on `isMounted` to avoid SSR hydration mismatches.
   - `Forms.js` — `"use client"`. Tabbed sign-up form for **fans / players / sponsors**. POSTs JSON to `/api/submit`.
-- **API**: `src/app/api/submit/route.js` is the only server route. It validates per-`type` fields and appends submissions to a local `submissions.json` via `fs`. **That file write is expected to fail on Vercel/serverless** — the route catches the error and still returns success. If you change submission handling, route to a real backend (email, DB, webhook) rather than relying on the local file.
+- **API**: `src/app/api/submit/route.js` is the only server route. It validates per-`type` fields and POSTs the submission to a Google Apps Script webhook (`SHEETS_WEBHOOK_URL` + `SHEETS_WEBHOOK_SECRET` env vars) which appends a row to the bound Google Sheet (tabs: `Fans`/`Players`/`Sponsors`) and sends two emails via `GmailApp`: a notification to `admin@ironforestfc.com` and a per-type auto-reply to the submitter. The route always returns success to the user — if the webhook fails or env vars are missing, the full submission is logged to Vercel logs so leads are recoverable. The Apps Script source is not in this repo; it lives in the Apps Script project bound to the sheet. Redeploy that project (Deploy → Manage deployments → New version) after editing the script.
 
 ## Styling system
 
@@ -46,4 +46,4 @@ Single-page marketing/teaser site for **Iron Forest FC** (Huntsville, TX soccer 
 
 ## Deployment
 
-Targeted at Vercel (this repo includes `public/vercel.svg`, `next.config.mjs` is empty). The submit route's file-write fallback exists specifically because Vercel's serverless functions have a read-only FS — keep that fallback intact if you touch the route.
+Targeted at Vercel (this repo includes `public/vercel.svg`, `next.config.mjs` is empty). Required env vars on Vercel: `SHEETS_WEBHOOK_URL` and `SHEETS_WEBHOOK_SECRET` (Apps Script webhook for form submissions). Local dev mirrors these in `.env.local` (gitignored).
