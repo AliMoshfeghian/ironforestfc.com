@@ -77,12 +77,27 @@ export default function Crest({ className = "", width = "100%", height = "100%" 
         <line x1="50" y1="75" x2="50" y2="210" stroke="rgba(162, 176, 168, 0.03)" strokeWidth="8" />
         <line x1="150" y1="75" x2="150" y2="210" stroke="rgba(162, 176, 168, 0.03)" strokeWidth="8" />
 
-        {/* Vintage Soccer Ball at the Base of the Trees - Moved up to translate(100, 155) */}
-        <g transform="translate(100, 155)">
-          <circle r="16" fill="#0d2117" stroke="url(#goldGrad)" strokeWidth="1.5" />
-          {/* Soccer Ball Panels */}
-          <path d="M 0,-16 L 0,-10 L -6,-5 L -14,-7 M 0,-10 L 6,-5 L 14,-7 M -6,-5 L -4,4 L -11,11 M 6,-5 L 4,4 L 11,11 M -4,4 L 0,10 L 0,16 M 4,4 L 0,10" stroke="url(#goldGrad)" strokeWidth="1" />
-          <polygon points="-3,-1 3,-1 5,3 0,7 -5,3" fill="url(#goldGrad)" opacity="0.8" />
+        {/* Deep Forest Roots */}
+        <path
+          d="M 100,140 Q 100,152 98,162 T 100,180 T 100,192 M 98,141 Q 93,153 87,163 T 75,176 T 62,185 M 91,155 Q 83,165 74,171 T 67,178 M 80,135 Q 78,147 70,157 T 58,168 T 46,174 M 70,135 Q 67,144 60,152 T 50,161 M 102,141 Q 107,153 113,163 T 125,176 T 138,185 M 109,155 Q 117,165 126,171 T 133,178 M 120,135 Q 122,147 130,157 T 142,168 T 154,174 M 130,135 Q 133,144 140,152 T 150,161"
+          stroke="url(#goldGrad)"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          fill="none"
+          opacity="0.85"
+        />
+
+        {/* Sam Houston Silhouette */}
+        <g id="sam-houston-silhouette" opacity="0.95">
+          <path
+            d="M 97,120 L 97,117 L 103,117 L 103,120 H 106.5 V 121.5 H 93.5 V 120 H 97 Z 
+               M 96,121.5 Q 96,126 100,126.5 Q 104,126 104,121.5 Z
+               M 95.5,126.5 C 92.5,128.5 90.5,132 90.5,136 L 93,158 L 95.5,160 L 96.5,160 L 95,166 H 98 L 99,160 H 101 L 102,166 H 105 L 103.5,160 L 104.5,160 L 107,158 L 109.5,136 C 109.5,132 107.5,128.5 104.5,126.5 Z"
+            fill="url(#goldGrad)"
+          />
+          {/* Cane */}
+          <line x1="92.5" y1="135" x2="89.5" y2="166" stroke="url(#goldGrad)" strokeWidth="1.5" strokeLinecap="round" />
         </g>
       </g>
 
@@ -116,8 +131,12 @@ export default function Crest({ className = "", width = "100%", height = "100%" 
         FOOTBALL CLUB
       </text>
 
-      {/* Est. Year Badge Divider */}
-      <rect x="80" y="64" width="40" height="1" fill="url(#goldGrad)" opacity="0.4" />
+      {/* Est. Year Badge Divider with Star */}
+      <g>
+        <line x1="68" y1="66.5" x2="88" y2="66.5" stroke="url(#goldGrad)" strokeWidth="1" opacity="0.4" />
+        <polygon points="100,61.5 101.5,65 105,65 102,67 103.5,70.5 100,68.5 96.5,70.5 98,67 95,65 98.5,65" fill="url(#goldGrad)" />
+        <line x1="112" y1="66.5" x2="132" y2="66.5" stroke="url(#goldGrad)" strokeWidth="1" opacity="0.4" />
+      </g>
 
       {/* Huntsville Location text - shifted up and sized appropriately to avoid curved border overlap */}
       <text
@@ -143,7 +162,7 @@ export default function Crest({ className = "", width = "100%", height = "100%" 
         fontWeight="500"
         letterSpacing="0.12em"
       >
-        EST. 2027
+        EST. 1836
       </text>
     </svg>
   );
