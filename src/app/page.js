@@ -4,7 +4,6 @@ import { Trees, Trophy, Target, ArrowRight, ShieldCheck, Mail, Users, ArrowDown 
 import Crest from "../components/Crest";
 import Countdown from "../components/Countdown";
 import Forms from "../components/Forms";
-
 import CrestStory from "../components/CrestStory";
 import styles from "./page.module.css";
 
@@ -20,7 +19,6 @@ export default function Home() {
           </Link>
           <nav className={styles.nav}>
             <a href="#story" className={styles.navLink}>Our Story</a>
-
             <a href="#timeline" className={styles.navLink}>Roadmap</a>
             <a href="#faqs" className={styles.navLink}>FAQs</a>
           </nav>
@@ -107,8 +105,6 @@ export default function Home() {
             <CrestStory />
           </div>
         </section>
-
-
 
         {/* Roadmap / Timeline Section */}
         <section id="timeline" className={styles.timelineSection}>
