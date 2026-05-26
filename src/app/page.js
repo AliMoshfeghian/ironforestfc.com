@@ -4,7 +4,7 @@ import { Trees, Trophy, Target, ArrowRight, ShieldCheck, Mail, Users, ArrowDown 
 import Crest from "../components/Crest";
 import Countdown from "../components/Countdown";
 import Forms from "../components/Forms";
-import Kits from "../components/Kits";
+
 import CrestStory from "../components/CrestStory";
 import styles from "./page.module.css";
 
@@ -20,7 +20,7 @@ export default function Home() {
           </Link>
           <nav className={styles.nav}>
             <a href="#story" className={styles.navLink}>Our Story</a>
-            <a href="#kits" className={styles.navLink}>Official Kits</a>
+
             <a href="#timeline" className={styles.navLink}>Roadmap</a>
             <a href="#faqs" className={styles.navLink}>FAQs</a>
           </nav>
@@ -108,8 +108,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Official Kits Showcase */}
-        <Kits />
+
 
         {/* Roadmap / Timeline Section */}
         <section id="timeline" className={styles.timelineSection}>
@@ -134,7 +133,7 @@ export default function Home() {
                 <div className={`${styles.timelineContent} glass-panel`}>
                   <span className={styles.timelineDate}>WINTER 2026</span>
                   <h4>Jersey Launch & Venue Announcement</h4>
-                  <p>Releasing details of our home stadium partner in Huntsville. <em>Update: Official home, away, and third kits have been launched! See the showcase above.</em></p>
+                  <p>Releasing details of our home stadium partner and official kit designs in Huntsville.</p>
                 </div>
               </div>
 
